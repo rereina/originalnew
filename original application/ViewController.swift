@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var pushToView2: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +21,27 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "next") {
+        }
+    }
+    
+    @IBAction func push(sender : UIButton) {
+        performSegueWithIdentifier("next",sender: nil)
+    }
+    
+    //unwind
+    @IBAction func exitTo(segue: UIStoryboardSegue) {
+        if (segue.identifier == "back") {
+        }
+        
+    }*/
 
 
+    //@IBOutlet weak var pushToView2: UIButton!
+   
+   /* @IBAction func backFromSecondView(segue:UIStoryboardSegue){
+        NSLog("FirstViewController#backFromSecondView")
+    }
+    */
 }
-
