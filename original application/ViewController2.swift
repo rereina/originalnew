@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController2: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     var places = ["リビング", "自分の部屋", "洗面所", "トイレ"]
+    //数値の範囲（1...10という記法）を配列にする
+    //var dataArray:[Int] = ([Int])(0...24)
     
     
     override func viewDidLoad() {
@@ -36,6 +38,7 @@ class ViewController2: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         
     }
+    
     
     
     

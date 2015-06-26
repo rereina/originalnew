@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="are-you-ready--second.png" translatesAutoresizingMaskIntoConstraints="NO" id="izj-55-wli">
-                                <rect key="frame" x="0.0" y="-8" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv3-FN-NAp">
                                 <rect key="frame" x="197" y="592" width="124" height="30"/>
@@ -65,24 +65,32 @@
                                     <segue destination="8Qv-uS-KyM" kind="show" id="HVm-kv-cY5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAc-22-nhe">
+                                <rect key="frame" x="251" y="199" width="45" height="30"/>
+                                <state key="normal" title="完了">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw3-fp-bVy">
+                                <rect key="frame" x="157" y="208" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VZ-bl-NoQ">
+                                <rect key="frame" x="157" y="208" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.99788904671717171" green="0.35925558780650896" blue="0.24256019348584432" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yaH-Qg-Vxp">
-                                <rect key="frame" x="0.0" y="261" width="375" height="162"/>
+                                <rect key="frame" x="-9" y="253" width="375" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="1sN-Qj-9Av" id="epN-do-RCU"/>
                                     <outlet property="delegate" destination="1sN-Qj-9Av" id="e0d-Il-3Nu"/>
                                 </connections>
                             </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUw-Iy-lKx">
-                                <rect key="frame" x="139" y="200" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAc-22-nhe">
-                                <rect key="frame" x="259" y="261" width="45" height="30"/>
-                                <state key="normal" title="閉じる">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -151,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="are-you-ready--1-third.png" translatesAutoresizingMaskIntoConstraints="NO" id="FXy-Fp-tTd">
-                                <rect key="frame" x="0.0" y="-34" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-31" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.34508120532991748" blue="0.37866909534143967" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua7-7K-dq3">
@@ -167,17 +175,29 @@
                                     <segue destination="381-9u-gi1" kind="show" id="cKE-Zs-FfE"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5e-10-V35">
-                                <rect key="frame" x="112" y="184" width="151" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.97219822450325544" blue="0.26994832382424083" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8s-wt-biq">
+                                <rect key="frame" x="118" y="146" width="138" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uTn-qx-Rqr" id="raT-n4-H5r"/>
+                                    <outlet property="delegate" destination="uTn-qx-Rqr" id="0He-am-SZ4"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6N-SK-vNV">
+                                <rect key="frame" x="196" y="108" width="57" height="30"/>
+                                <color key="tintColor" red="1" green="0.35664150002135198" blue="0.49413770968439463" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="close">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="p7g-Xg-5Pd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="check" destination="ua7-7K-dq3" id="aNK-uf-lHn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pC4-NE-YJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
