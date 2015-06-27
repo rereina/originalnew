@@ -77,20 +77,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VZ-bl-NoQ">
-                                <rect key="frame" x="157" y="208" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.99788904671717171" green="0.35925558780650896" blue="0.24256019348584432" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJa-ts-eUa">
+                                <rect key="frame" x="96" y="313" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" red="0.98035037878787878" green="0.4874802054628794" blue="0.29030948029957376" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yaH-Qg-Vxp">
-                                <rect key="frame" x="-9" y="253" width="375" height="162"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="1sN-Qj-9Av" id="epN-do-RCU"/>
-                                    <outlet property="delegate" destination="1sN-Qj-9Av" id="e0d-Il-3Nu"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -175,33 +167,15 @@
                                     <segue destination="381-9u-gi1" kind="show" id="cKE-Zs-FfE"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8s-wt-biq">
-                                <rect key="frame" x="118" y="146" width="138" height="162"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="uTn-qx-Rqr" id="raT-n4-H5r"/>
-                                    <outlet property="delegate" destination="uTn-qx-Rqr" id="0He-am-SZ4"/>
-                                </connections>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6N-SK-vNV">
-                                <rect key="frame" x="196" y="108" width="57" height="30"/>
-                                <color key="tintColor" red="1" green="0.35664150002135198" blue="0.49413770968439463" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="close">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="p7g-Xg-5Pd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="check" destination="ua7-7K-dq3" id="aNK-uf-lHn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pC4-NE-YJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3210.5" y="1445.5"/>
+            <point key="canvasLocation" x="3116.5" y="1459.5"/>
         </scene>
         <!--View Controller4-->
         <scene sceneID="dS1-Xv-aBi">
@@ -264,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ER-JZ-b6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4317.5" y="1434.5"/>
+            <point key="canvasLocation" x="4257.5" y="1426.5"/>
         </scene>
     </scenes>
     <resources>

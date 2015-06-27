@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		370279A81B3DBCD2005A1234 /* PickerViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370279A71B3DBCD2005A1234 /* PickerViewController3.swift */; };
 		37BCB4EB1B3A82D100E7022A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BCB4E91B3A82D100E7022A /* Main.storyboard */; };
 		37F33EC81B3A237F007EE78A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F33EC71B3A237F007EE78A /* AppDelegate.swift */; };
 		37F33ECA1B3A237F007EE78A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F33EC91B3A237F007EE78A /* ViewController.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		370279A71B3DBCD2005A1234 /* PickerViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController3.swift; sourceTree = "<group>"; };
 		37BCB4EA1B3A82D100E7022A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37F33EC21B3A237E007EE78A /* original application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "original application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F33EC61B3A237F007EE78A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				37F33EF91B3A2699007EE78A /* ViewController4.swift */,
 				37F33EFB1B3A26AA007EE78A /* ViewController5.swift */,
 				37BCB4E91B3A82D100E7022A /* Main.storyboard */,
-				370279A71B3DBCD2005A1234 /* PickerViewController3.swift */,
 				37F33EEF1B3A23F8007EE78A /* are-you-ready--1-fifth.png */,
 				37F33EED1B3A23E7007EE78A /* are-you-ready--1-fourth.png */,
 				37F33EEB1B3A23D9007EE78A /* are-you-ready--1-third.png */,
@@ -260,7 +257,6 @@
 				37F33EFE1B3A26BC007EE78A /* ViewControllerdolphine.swift in Sources */,
 				37F33EF61B3A2653007EE78A /* ViewController2.swift in Sources */,
 				37F33EFC1B3A26AA007EE78A /* ViewController5.swift in Sources */,
-				370279A81B3DBCD2005A1234 /* PickerViewController3.swift in Sources */,
 				37F33EFA1B3A2699007EE78A /* ViewController4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
