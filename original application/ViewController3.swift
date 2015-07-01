@@ -13,6 +13,12 @@ class ViewController3: UIViewController,UIPickerViewDataSource,UIPickerViewDeleg
     
     
     var myUIPicker: UIPickerView = UIPickerView()
+    var myToolBar: UIToolbar!
+    var myTextField1: UITextField!
+    var myTextField2: UITextField!
+    var myTextField3: UITextField!
+    var myPickerView: UIPickerView!
+
     
     var salarymanArr: NSArray =
     
@@ -24,9 +30,59 @@ class ViewController3: UIViewController,UIPickerViewDataSource,UIPickerViewDeleg
     
     
     
-    
-    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       //PickerView作成
+        myPickerView = UIPickerView()
+        myPickerView.showsSelectionIndicator = true
+        myPickerView.delegate = self
+        println("時")
+        println("分")
+        
+        //TextField作成
+        myTextField1 = UITextField(frame: CGRectMake(120, 150, 320, 50))
+        myTextField1.placeholder = salarymanArr[0] as? String;
+        println("時")
+        self.view.addSubview(myTextField1)
+        
+        myTextField2 = UITextField(frame: CGRectMake(220, 150, 320, 50))
+        myTextField2.placeholder = salarymanArr[0] as? String;
+        println("分")
+        self.view.addSubview(myTextField2)
+        
+        myTextField3 = UITextField(frame: CGRectMake(920, 950, 0, 0))
+        myTextField3.placeholder = salarymanArr[0] as? String;
+        self.view.addSubview(myTextField3)
+
+        
+        //ToolBar作成。ニョキ担当
+        myToolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
+        myToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        myToolBar.backgroundColor = UIColor.blackColor()
+        myToolBar.barStyle = UIBarStyle.Black
+        myToolBar.tintColor = UIColor.whiteColor()
+        
+        //ToolBarを閉じるボタンを追加
+        let myToolBarButton = UIBarButtonItem(title: "Close", style:.Bordered, target: self, action: "onClick:")
+        myToolBarButton.tag = 1
+        myToolBar.items = [myToolBarButton]
+        
+        //TextFieldをpickerViewとToolVerに関連づけ
+        myTextField1.inputView = myPickerView
+        myTextField1.inputAccessoryView = myToolBar
+        
+        myTextField2.inputView = myPickerView
+        myTextField2.inputAccessoryView = myToolBar
+        
+        myTextField3.inputView = myPickerView
+        myTextField3.inputAccessoryView = myToolBar
+        
+        
+    }
+    
+
+   /* override func viewDidLoad() {
         
         super.viewDidLoad()
         
@@ -41,7 +97,7 @@ class ViewController3: UIViewController,UIPickerViewDataSource,UIPickerViewDeleg
         self.view.addSubview(myUIPicker)
         
     }
-    
+    */
     
     
     //表示列
@@ -85,10 +141,11 @@ class ViewController3: UIViewController,UIPickerViewDataSource,UIPickerViewDeleg
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
         
         
+
         
         if (component == 0){
-            
             return salarymanArr[row] as! String
+            
             
         }else if (component == 1){
             
@@ -101,8 +158,7 @@ class ViewController3: UIViewController,UIPickerViewDataSource,UIPickerViewDeleg
         }
         
         return "";
-        
-    }
+           }
     
     
     
@@ -111,56 +167,82 @@ class ViewController3: UIViewController,UIPickerViewDataSource,UIPickerViewDeleg
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         
-        
+       
         if (component == 0){
             
             println("列: \(row)")
             
             println("値: \(salarymanArr[row])")
             
+            myTextField1.text = salarymanArr[row] as? String;
+            
         }else if (component == 1){
             
             println("列: \(row)")
             
             println("値: \(yakushokuArr[row])")
-            
+                      myTextField2.text = yakushokuArr[row] as? String;
         }else if (component == 2){
             
             println("列: \(row)")
             
             println("値: \(kinmuchiArr[row])")
-            
+            myTextField3.text = kinmuchiArr[row] as? String;
         }
+        
+        
+        
+        
+        
         
         
         
     }
     
+    
+    
+    
+    
     @IBAction func perfect( sender:AnyObject){
         // データ保存処理
         
         // NSUserDefaultsインスタンスの生成
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        //値を格納
+        let places2 = NSUserDefaults.standardUserDefaults()
+        places2.setObject("myTextField1", forKey: "id")
+    }
+    @IBAction func delete() {
+        let places3 = NSUserDefaults.standardUserDefaults()
+        places3.removeObjectForKey("id")
+
         
         // キー: "saveText" , 値: "" を格納。（idは任意）
         //userDefaults.setObject(textField.text, forKey: "saveText")
         
     }
     
-    func check (sender:AnyObject){
-    }
+   // func check (sender:AnyObject){
     
     
     
-    override func didReceiveMemoryWarning() {
+    //閉じる
+    func onClick(sender: UIBarButtonItem) {
+        myTextField1.resignFirstResponder()//値を取得し、表示する
+        myTextField2.resignFirstResponder()
+        myTextField3.resignFirstResponder()
+    
+    
+    
+      func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
         
     }
     
     
-    
 }
+}
+
 
 
   /*  //private var myTextField: UITextField!
@@ -246,8 +328,8 @@ class ViewController3: UIViewController,UIPickerViewDataSource,UIPickerViewDeleg
     
      func check (sender:AnyObject){
     }
-*/
-/*/*
+
+/*
 UITextFieldが編集された直後に呼ばれるデリゲートメソッド.
 */
 func textFieldDidBeginEditing(textField: UITextField){
@@ -269,12 +351,12 @@ func textFieldShouldEndEditing(textField: UITextField) -> Bool {
 func textFieldShouldReturn(textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     
-    return true*/
+    return true
     
 
 
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -282,6 +364,6 @@ func textFieldShouldReturn(textField: UITextField) -> Bool {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
-
+*/

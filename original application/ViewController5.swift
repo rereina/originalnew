@@ -14,6 +14,8 @@ class ViewController5: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        makeTime(1, goal: 100)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +34,17 @@ class ViewController5: UIViewController {
     }
     */
 
+    
+    //メソッド
+    func makeTime(start: Int, goal: Int) {
+        let myview : UIView = UIView()
+        myview.frame = CGRectMake(0, CGFloat(start*10), CGFloat(30), CGFloat((goal-start)*30))
+        myview.backgroundColor = UIColor.redColor()
+        print(self)
+        self.view.addSubview(myview)
+        
+    }
+    
+    
+    
 }

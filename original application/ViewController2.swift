@@ -11,10 +11,31 @@ import UIKit
 
 class ViewController2: UIViewController,UIPickerViewDelegate,UIToolbarDelegate {
     
-    var salarymanArr: NSArray = ["リビング", "自分の部屋", "洗面所", "トイレ"]
+    var placeArr: NSArray = ["リビング", "自分の部屋", "洗面所", "トイレ","その他"]
+    var timeArr: NSArray =
+    ["0","5","10","15","20","25","30","35","40","45","50","55","60","65","70","75","80","85","90","95","100","105","110","115","120"]
+   // var kinmuchiArr: NSArray = [""]
+    
+    
+    
+    var myUIPicker: UIPickerView = UIPickerView()
     var myToolBar: UIToolbar!
-    var myTextField: UITextField!
+    var myTextField1: UITextField!
+    var myTextField2: UITextField!
+    @IBOutlet var textfield : UITextField!
+    //var myTextField3: UITextField!
     var myPickerView: UIPickerView!
+    var planArr:NSArray = []
+    @IBOutlet var mylabel:UILabel!
+    
+    var place: [String] = []
+    var time : [String] = []
+    var num = 0
+    
+    
+    //private let labelText = ["hours", "mins", "sec"]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +44,24 @@ class ViewController2: UIViewController,UIPickerViewDelegate,UIToolbarDelegate {
         myPickerView = UIPickerView()
         myPickerView.showsSelectionIndicator = true
         myPickerView.delegate = self
+       // println("分")
         
         //TextField作成
-        myTextField = UITextField(frame: CGRectMake(150, 300, 320, 50))
-        myTextField.placeholder = salarymanArr[0] as? String;
-        self.view.addSubview(myTextField)
+        myTextField1 = UITextField(frame: CGRectMake(100, 500, 320, 50))
+        //初期化
+        myTextField1.placeholder = placeArr[0] as? String;
+        //println("時")
+        self.view.addSubview(myTextField1)
+        
+        myTextField2 = UITextField(frame: CGRectMake(250, 500, 320, 50))
+        myTextField2.placeholder = timeArr[0] as? String;
+       // println("分")
+        self.view.addSubview(myTextField2)
+        
+        //myTextField3 = UITextField(frame: CGRectMake(920, 950, 0, 0))
+        //myTextField3.placeholder = kinmuchiArr[0] as? String;
+        //self.view.addSubview(myTextField3)
+        
         
         //ToolBar作成。ニョキ担当
         myToolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
@@ -37,31 +71,227 @@ class ViewController2: UIViewController,UIPickerViewDelegate,UIToolbarDelegate {
         myToolBar.tintColor = UIColor.whiteColor()
         
         //ToolBarを閉じるボタンを追加
-        let myToolBarButton = UIBarButtonItem(title: "Close", style: .Bordered, target: self, action: "onClick:")
+        let myToolBarButton = UIBarButtonItem(title: "Close", style:.Bordered, target: self, action: "onClick:")
         myToolBarButton.tag = 1
         myToolBar.items = [myToolBarButton]
         
         //TextFieldをpickerViewとToolVerに関連づけ
-        myTextField.inputView = myPickerView
-        myTextField.inputAccessoryView = myToolBar
+        myTextField1.inputView = myPickerView
+        myTextField1.inputAccessoryView = myToolBar
+        
+        myTextField2.inputView = myPickerView
+        myTextField2.inputAccessoryView = myToolBar
+        
+       // var A:AnyObject = A.objectForKey("openKey")
+       // myTextField3.inputView = myPickerView
+        //myTextField3.inputAccessoryView = myToolBar
+        
+        
     }
+    
+    
+    /* override func viewDidLoad() {
+    
+    super.viewDidLoad()
+    
+    
+    
+    myUIPicker.frame = CGRectMake(0,80,self.view.bounds.width, 180.0)
+    
+    myUIPicker.delegate = self
+    
+    myUIPicker.dataSource = self
+    
+    self.view.addSubview(myUIPicker)
+    
+    }
+    */
+    
+    
+    //表示列
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        
+        return 2
+        
+    }
+    
+    
+    
+    //表示個数
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        
+        
+        if (component == 0){
+            
+            return placeArr.count
+            
+        }else if (component == 1){
+            
+            return timeArr.count
+            
+        //}else if (component == 2){
+            
+          //  return kinmuchiArr.count
+            
+        } else {
+        
+        return 0;
+        
+    }
+    }
+    
+    
+    //表示内容
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
+        
+        
+        
+        
+        if (component == 0){
+            return placeArr[row] as! String
+            
+            
+        }else if (component == 1){
+            
+            return timeArr[row] as! String
+            
+       // }else if (component == 2){
+            
+         //   return kinmuchiArr[row] as! String
+            
+        } else {
+        
+        return "";
+    }
+        }
+    
+    
+    //選択時
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+        
+        if (component == 0){
+            
+            println("列: \(row)")
+            
+            println("値: \(placeArr[row])")
+            
+            myTextField1.text = placeArr[row] as? String;
+            
+        }else if (component == 1){
+            
+            println("列: \(row)")
+            
+            println("値: \(timeArr[row]) ")
+            myTextField2.text = timeArr[row] as? String;
+       // }else if (component == 2){
+            
+         //   println("列: \(row)")
+            
+           // println("値: \(kinmuchiArr[row])")
+            //myTextField3.text = kinmuchiArr[row] as? String;
+            
+        }
+        }
+    
+    
+    
+    
+    
+     func perfect( sender:AnyObject){
+        
+        // Aというインスタンスの生成
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults2 = NSUserDefaults.standardUserDefaults()
+        
+        // データ保存処理
+      // planArr += ["myTextField"]
+
+        
+        place.append(self.myTextField1.text)
+        time.append(self.myTextField2.text)
+        
+        //配列をopenKeyで保存
+            userDefaults.setObject(place, forKey: "openKey")
+       userDefaults.synchronize()
+        
+         mylabel.text = place[num]
+        userDefaults2.setObject(time, forKey : "open")
+        userDefaults2.synchronize()
+      mylabel.text = time[num]
+        //表示
+       // println(AId)
+        
+        //キー: "id" , 値: "" を格納。（idは任意）
+       //A.setObject(x,forKey: "id")
+}
+
+
+        //「ud」というインスタンスをつくる。
+        //let ud = NSUserDefaults.standardUserDefaults()
+        
+        // キーがidの値をとります。
+        
+        //var udId : AnyObject! = ud.objectForKey("id")
+
+
+        // これで表示。
+        //println(udId)
+
+    
+    // func check (sender:AnyObject){
+    
+    
+    
+    //閉じる
+    func onClick(sender: UIBarButtonItem) {
+        myTextField1.resignFirstResponder() //値を取得して、表示している
+        myTextField2.resignFirstResponder()
+       // myTextField3.resignFirstResponder()
+        //値を格納
+        let places2 = NSUserDefaults.standardUserDefaults()
+        places2.setObject("myTextField1", forKey: "id")
+    }
+    @IBAction func delete() {
+        let places3 = NSUserDefaults.standardUserDefaults()
+        places3.removeObjectForKey("id")
+    }
+
+}
+    /*
+    
+    
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
         return 1
     }
     
+    func numberOfComponentsInPIckerView(pickerView1:UIPickerView!) -> Int{
+        return 1
+        
+    }
+    
     func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
         return salarymanArr.count
+        //return salarymanArr1.count
+        
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return salarymanArr[row] as? String;
+        //return salarymanArr1[row] as? String;
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         myTextField.text = salarymanArr[row] as? String;
+        //myTextField1.text = salarymanArr1[row] as? String
     }
-    
     //閉じる
     func onClick(sender: UIBarButtonItem) {
         myTextField.resignFirstResponder()
@@ -69,21 +299,78 @@ class ViewController2: UIViewController,UIPickerViewDelegate,UIToolbarDelegate {
     
     
     
+    //func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
+      //  return 1
+   // }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func pickerView1(pickerView1: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
+        return salarymanArr1.count
+        //return salarymanArr1.count
+        
     }
     
-}
+    func pickerView1(pickerView1: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return salarymanArr1[row] as? String;
+        //return salarymanArr1[row] as? String;
+    }
+    
+    func pickerView1(pickerView1: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        myTextField1.text = salarymanArr1[row] as? String;
+    }
+    
+    //閉じる
+    func onClick1(sender: UIBarButtonItem) {
+    myTextField1.resignFirstResponder()
+}*/
+
+
+
+
+
+
+
+
+    /*func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
+        return salarymanArr1.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return salarymanArr1[row] as? String;
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        myTextField1.text = salarymanArr1[row] as? String;
+    }
+    
+    //閉じる
+    func onClick(sender: UIBarButtonItem) {
+        myTextField1.resignFirstResponder()
+    }
+    */
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // override func didReceiveMemoryWarning() {
+      //  super.didReceiveMemoryWarning()
+    //}
+    
+//}
 
 
 /*class ViewController2: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
