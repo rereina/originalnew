@@ -11,11 +11,12 @@ import UIKit
 class ViewController4: UIViewController {
     var n : Int = 0
     var  goal1 : Int = 0
-   // var z1 : Int?
+    //var z1 : Int?
 //var x : String?
    // var t : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
 
         // Do any additional setup after loading the view.
@@ -100,7 +101,7 @@ func side4(start:Int, goal1:Int){
     //var time:Array = userDefaults.arrayForKey("open")!
         
         //var goal1 : Int = 0
-        var z : Int = 0
+        //var z : Int = 0
        // var place : NSMutableArray = [0]
         
         
@@ -129,20 +130,24 @@ func side4(start:Int, goal1:Int){
         }
         self . view . addSubview(myview)
     }*/
-        var n : Int = 1
+        var placestate : [String] = []
         let myview : UIView = UIView()
         //let userDefaults = NSUserDefaults.standardUserDefaults()
-        let place = userDefaults.objectForKey("openKey") as! NSMutableArray!
-        var x : String?
+        let objects = userDefaults.objectForKey("openKey") as! NSMutableArray!
+        var x :String
+        for x in objects!{
+            //配列に追加していく
+            placestate.append(x as! NSString as String)
+        }
         //x = "リビング"
-       x = (place[n] as? String)
-        if place[n] as? String == "リビング" {
+       x = (placestate[n] as? String)!
+        if placestate[n] as? String == "リビング" {
             myview.backgroundColor = UIColor.redColor()
-        } else if (place[n] as? String == "自分の部屋") {
+        } else if (placestate[n] as? String == "自分の部屋") {
             myview.backgroundColor = UIColor.blueColor()
-        } else if (place[n] as? String == "洗面所") {
+        } else if (placestate[n] as? String == "洗面所") {
             myview.backgroundColor = UIColor.greenColor()
-        } else if place[n] as? String == "トイレ" {
+        } else if placestate[n] as? String == "トイレ" {
             myview.backgroundColor = UIColor.purpleColor()
         } else {
             myview.backgroundColor = UIColor.orangeColor()

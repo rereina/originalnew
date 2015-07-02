@@ -203,8 +203,7 @@ class ViewController2: UIViewController,UIPickerViewDelegate,UIToolbarDelegate {
     
     
     
-    
-     func perfect( sender:AnyObject){
+     @IBAction func perfect( sender:AnyObject){
         
         // Aというインスタンスの生成
         let userDefaults = NSUserDefaults.standardUserDefaults()
