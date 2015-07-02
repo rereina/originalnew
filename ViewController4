@@ -1,0 +1,132 @@
+import UIKit
+
+class ViewController4: UIViewController {
+    var n : Int = 0
+    var  goal1 : Int = 0
+    //var z1 : Int?
+//var x : String?
+   // var t : Int?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+
+        // Do any additional setup after loading the view.
+        
+        
+        baseline1(0,goal0: 0)
+        baseline2(0, goal0: 0)
+        side1(0,goal1:0)
+        side2(0,goal1:0)
+        side3(0,goal1: 0)
+        side4(0,goal1: 0)
+        schedual1 (147, goal1: goal1(n))
+        //side4(0,goal1:0)
+       // makeTime(0, 0)
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func new(sender: AnyObject){
+        
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
+    var message = appDelegate.message
+        
+        
+    }
+
+
+        //メソッド
+    func baseline1(start:Int, goal0:Int){
+        let myview : UIView = UIView()
+        myview.frame = CGRectMake(0, 94, 380, 3)
+        //myview.frame = CGRectMake(0, 497, 380, 3)
+        myview.backgroundColor = UIColor.blackColor()
+        self.view.addSubview(myview)
+        }
+    func baseline2(start:Int, goal0:Int){
+        let myview : UIView = UIView()
+        //myview.frame = CGRectMake(0, 90, 380, 3)
+        myview.frame = CGRectMake(0, 587, 380, 3)
+        myview.backgroundColor = UIColor.blackColor()
+        self.view.addSubview(myview)
+    }
+    func side1(start:Int, goal1:Int){
+        let myview : UIView = UIView()
+        myview.frame = CGRectMake(70, 94, 4, 496)
+        //myview.frame = CGRectMake(0, 497, 380, 3)
+        myview.backgroundColor = UIColor.blackColor()
+        self.view.addSubview(myview)
+    }
+
+    func side2(start:Int, goal1:Int){
+        let myview : UIView = UIView()
+    myview.frame = CGRectMake(144, 94, 4, 496)
+    //myview.frame = CGRectMake(0, 497, 380, 3)
+    myview.backgroundColor = UIColor.blackColor()
+    self.view.addSubview(myview)
+}
+
+func side3(start:Int, goal1:Int){
+    let myview : UIView = UIView()
+    myview.frame = CGRectMake(222, 94, 4, 496)
+    //myview.frame = CGRectMake(0, 497, 380, 3)
+    myview.backgroundColor = UIColor.blackColor()
+    self.view.addSubview(myview)
+}
+
+func side4(start:Int, goal1:Int){
+    let myview : UIView = UIView()
+    myview.backgroundColor = UIColor.blackColor()
+    myview.frame = CGRectMake(296, 94, 4, 496)
+   // myview.frame = CGRectMake(350, 100,10, 10)
+    //myview.backgroundColor = UIColor.blackColor()
+    self.view.addSubview(myview)
+}
+    func schedual1(start:Int, goal1:Int){
+        let userDefaults = NSUserDefaults()
+
+        var placestate : [String] = []
+        let myview : UIView = UIView()
+        //let userDefaults = NSUserDefaults.standardUserDefaults()
+        let objects = userDefaults.objectForKey("openKey") as! NSMutableArray!
+        var x :String
+        for x in objects!{
+            //配列に追加していく
+            placestate.append(x as! NSString as String)
+        }
+        //x = "リビング"
+       x = (placestate[n] as? String)!
+        if placestate[n] as? String == "リビング" {
+            myview.backgroundColor = UIColor.redColor()
+        } else if (placestate[n] as? String == "自分の部屋") {
+            myview.backgroundColor = UIColor.blueColor()
+        } else if (placestate[n] as? String == "洗面所") {
+            myview.backgroundColor = UIColor.greenColor()
+        } else if placestate[n] as? String == "トイレ" {
+            myview.backgroundColor = UIColor.purpleColor()
+        } else {
+            myview.backgroundColor = UIColor.orangeColor()
+        }
+        myview.frame = CGRectMake(222, CGFloat(93 + 4 * goal1), CGFloat(70), CGFloat(93 + 4 * goal1))
+        self . view . addSubview(myview)
+        
+        
+    }
+        func goal1(n:Int) -> Int{
+            let userDefaults2 = NSUserDefaults.standardUserDefaults()
+            let time = userDefaults2.objectForKey("open") as! NSMutableArray!
+            var t :Int = 0
+            println(time)
+       t = time[n] as! Int
+        return t
+    }
+
+}
+
+
+
